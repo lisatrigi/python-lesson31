@@ -41,7 +41,7 @@ def insert_authors(authors, cursor):
             VALUES(?)
         """, (author,))
         cursor.execute('SELECT id FROM authors WHERE name = ?', (author,))
-        author_ids[author] = cursor.fetchone()[0]
+        authors_ids[author] = cursor.fetchone()[0]
 
     return authors_ids
 
